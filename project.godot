@@ -8,8 +8,16 @@
 
 config_version=5
 
+[accessibility]
+
+general/accessibility_support=2
+
 [application]
 
 config/name="A Random Game"
+run/main_scene="uid://b1ogyo5nluae0"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"

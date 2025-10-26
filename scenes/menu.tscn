@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1ogyo5nluae0"]
+
+[ext_resource type="Theme" uid="uid://qw2jld6ai0gx" path="res://themes/menu_theme.tres" id="1_yqeox"]
+[ext_resource type="Script" uid="uid://ccqdonam4s6p0" path="res://scenes/menu_button.gd" id="2_con2f"]
+[ext_resource type="AudioStream" uid="uid://mgsp07xafjg8" path="res://assets/sfx/button click1.mp3" id="3_con2f"]
+[ext_resource type="AudioStream" uid="uid://dvpbid2l7yvry" path="res://assets/sfx/button select1.mp3" id="4_mhnvy"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yqeox")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -74.0
+offset_right = 89.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Background/VBoxContainer"]
+layout_mode = 2
+text = "START"
+script = ExtResource("2_con2f")
+
+[node name="click_sfx" type="AudioStreamPlayer" parent="Background/VBoxContainer/Button"]
+stream = ExtResource("3_con2f")
+pitch_scale = 1.5
+
+[node name="hover_sfx" type="AudioStreamPlayer" parent="Background/VBoxContainer/Button"]
+stream = ExtResource("4_mhnvy")
+pitch_scale = 1.5
+
+[connection signal="mouse_entered" from="Background/VBoxContainer/Button" to="Background/VBoxContainer/Button" method="_on_mouse_entered"]
+[connection signal="pressed" from="Background/VBoxContainer/Button" to="Background/VBoxContainer/Button" method="_on_pressed"]

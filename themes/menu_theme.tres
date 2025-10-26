@@ -1,0 +1,50 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://qw2jld6ai0gx"]
+
+[ext_resource type="FontFile" uid="uid://br153ccashd02" path="res://assets/fonts/NotoSansJP-Regular.ttf" id="1_funo8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_funo8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_funo8"]
+bg_color = Color(0.9425846, 0.6389397, 0.70566344, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebccb"]
+bg_color = Color(0.88191533, 0.43661216, 0.55156034, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbcni"]
+bg_color = Color(0.7521314, 0.28999424, 0.42620736, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.83889705, 0.83889705, 0.838897, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_funo8")
+Button/styles/focus = SubResource("StyleBoxEmpty_funo8")
+Button/styles/hover = SubResource("StyleBoxFlat_funo8")
+Button/styles/normal = SubResource("StyleBoxFlat_ebccb")
+Button/styles/pressed = SubResource("StyleBoxFlat_gbcni")
