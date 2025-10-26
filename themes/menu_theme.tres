@@ -41,10 +41,12 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [resource]
+default_font = ExtResource("1_funo8")
 Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 24
+Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_funo8")
 Button/styles/focus = SubResource("StyleBoxEmpty_funo8")
 Button/styles/hover = SubResource("StyleBoxFlat_funo8")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_funo8")
 Button/styles/normal = SubResource("StyleBoxFlat_ebccb")
 Button/styles/pressed = SubResource("StyleBoxFlat_gbcni")
