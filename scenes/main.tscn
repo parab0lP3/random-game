@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bnlw7tl2b2k1k"]
 
-[ext_resource type="Theme" uid="uid://qw2jld6ai0gx" path="res://themes/menu_theme.tres" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://dv6xekrlpfp6g" path="res://scenes/main.gd" id="2_0wfyh"]
+[ext_resource type="Theme" uid="uid://bpyp66wa5j7o5" path="res://themes/main_theme.tres" id="2_sugp2"]
 
 [sub_resource type="Animation" id="Animation_70i5f"]
 length = 0.001
@@ -182,7 +182,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_o5qli")
 script = ExtResource("2_0wfyh")
 
 [node name="background" type="Panel" parent="."]
@@ -194,21 +193,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_sugp2")
 
-[node name="Button" type="Button" parent="background"]
+[node name="text" type="Label" parent="background"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -148.0
-offset_top = -49.0
-offset_right = 148.0
-offset_bottom = 49.0
+offset_left = -269.0
+offset_top = 100.0
+offset_right = 269.0
+offset_bottom = 266.0
 grow_horizontal = 2
-grow_vertical = 2
-text = "AAAAAAA"
+text = "This is A Test"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="transition" type="ColorRect" parent="."]
 layout_mode = 1
