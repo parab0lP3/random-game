@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1ogyo5nluae0"]
+[gd_scene load_steps=10 format=3 uid="uid://b1ogyo5nluae0"]
 
 [ext_resource type="Theme" uid="uid://qw2jld6ai0gx" path="res://themes/menu_theme.tres" id="1_yqeox"]
 [ext_resource type="Script" uid="uid://uwwphw00gr8k" path="res://scenes/menu.gd" id="2_4ytvr"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://5u287xhbah8n" path="res://assets/fonts/NotoSansJP-Bold.ttf" id="6_g3eks"]
 [ext_resource type="Script" uid="uid://hvmb3jo5jopf" path="res://scenes/fullscreen_toggle.gd" id="7_v86rl"]
 [ext_resource type="Script" uid="uid://dthyby3oa8aq1" path="res://scenes/back_button.gd" id="8_13sgg"]
+[ext_resource type="Script" uid="uid://b1ju2cp2ld8tc" path="res://scenes/sound_toggle.gd" id="8_i6lef"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -28,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="background"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -100,7 +102,6 @@ theme_override_font_sizes/font_size = 44
 text = "Random Ahh Game"
 
 [node name="darken_bg" type="ColorRect" parent="background"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -134,6 +135,21 @@ stream = ExtResource("3_con2f")
 pitch_scale = 1.5
 
 [node name="hover_sfx" type="AudioStreamPlayer" parent="background/darken_bg/VBoxContainer/fullscreen_toggle"]
+stream = ExtResource("4_mhnvy")
+pitch_scale = 1.5
+
+[node name="sound_toggle" type="CheckButton" parent="background/darken_bg/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Sound"
+alignment = 1
+script = ExtResource("8_i6lef")
+
+[node name="click_sfx" type="AudioStreamPlayer" parent="background/darken_bg/VBoxContainer/sound_toggle"]
+stream = ExtResource("3_con2f")
+pitch_scale = 1.5
+
+[node name="hover_sfx" type="AudioStreamPlayer" parent="background/darken_bg/VBoxContainer/sound_toggle"]
 stream = ExtResource("4_mhnvy")
 pitch_scale = 1.5
 
@@ -172,5 +188,8 @@ pitch_scale = 1.5
 [connection signal="mouse_entered" from="background/darken_bg/VBoxContainer/fullscreen_toggle" to="background/darken_bg/VBoxContainer/fullscreen_toggle" method="_on_mouse_entered"]
 [connection signal="pressed" from="background/darken_bg/VBoxContainer/fullscreen_toggle" to="background/darken_bg/VBoxContainer/fullscreen_toggle" method="_on_pressed"]
 [connection signal="toggled" from="background/darken_bg/VBoxContainer/fullscreen_toggle" to="background/darken_bg/VBoxContainer/fullscreen_toggle" method="_on_toggled"]
+[connection signal="mouse_entered" from="background/darken_bg/VBoxContainer/sound_toggle" to="background/darken_bg/VBoxContainer/sound_toggle" method="_on_mouse_entered"]
+[connection signal="pressed" from="background/darken_bg/VBoxContainer/sound_toggle" to="background/darken_bg/VBoxContainer/sound_toggle" method="_on_pressed"]
+[connection signal="toggled" from="background/darken_bg/VBoxContainer/sound_toggle" to="background/darken_bg/VBoxContainer/sound_toggle" method="_on_toggled"]
 [connection signal="mouse_entered" from="background/darken_bg/settings_back" to="background/darken_bg/settings_back" method="_on_mouse_entered"]
 [connection signal="pressed" from="background/darken_bg/settings_back" to="background/darken_bg/settings_back" method="_on_pressed"]
