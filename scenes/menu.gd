@@ -4,7 +4,7 @@ extends Control
 func _on_start_button_pressed() -> void:
 	$transition.visible = true
 	$transition/fade_animation.play("fade_begin")
-	$transition/fade_timer.start()
+	$transition/fade_animation/fade_timer.start()
 
 
 func _on_settings_button_pressed() -> void:
